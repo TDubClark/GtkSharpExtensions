@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtkSharpExtensions", "GtkSharpExtensions\GtkSharpExtensions.csproj", "{6F2D1F2D-FC6E-4025-81F4-9F5D5CDF3C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libGtkSharpExtensions", "libGtkSharpExtensions\libGtkSharpExtensions.csproj", "{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libGtkSharpTreeView", "libGtkSharpTreeView\libGtkSharpTreeView.csproj", "{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libGtkSharpWin", "libGtkSharpWin\libGtkSharpWin.csproj", "{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}.Debug|x86.ActiveCfg = Debug|x86
+		{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}.Debug|x86.Build.0 = Debug|x86
+		{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}.Release|x86.ActiveCfg = Release|x86
+		{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}.Release|x86.Build.0 = Release|x86
+		{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}.Debug|x86.Build.0 = Debug|Any CPU
+		{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}.Release|x86.ActiveCfg = Release|Any CPU
+		{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}.Release|x86.Build.0 = Release|Any CPU
+		{6F2D1F2D-FC6E-4025-81F4-9F5D5CDF3C4F}.Debug|x86.ActiveCfg = Debug|x86
+		{6F2D1F2D-FC6E-4025-81F4-9F5D5CDF3C4F}.Debug|x86.Build.0 = Debug|x86
+		{6F2D1F2D-FC6E-4025-81F4-9F5D5CDF3C4F}.Release|x86.ActiveCfg = Release|x86
+		{6F2D1F2D-FC6E-4025-81F4-9F5D5CDF3C4F}.Release|x86.Build.0 = Release|x86
+		{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

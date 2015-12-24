@@ -1,0 +1,6 @@
+﻿This is a library of extension methods for various basic classes
+in the Gtk# library.
+
+You can reference these methods in your project by adding this C# using statement:
+
+using GtkSharp.Extensions;
