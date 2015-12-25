@@ -57,6 +57,9 @@ You can download the source and run it from MonoDevelop (Xamarin Studio on Mac o
 The main project GtkSharpExtensions is a driver application, with examples of building a menu and editing collections.
 
 
+Notes
+=====
+
 I built these with MonoDevelop 5.10, and they should run in Visual Studio 2012 or later.
 
 The licensed is MIT, which I hope will ease any licensing headaches with other Mono software.
@@ -65,5 +68,5 @@ These libraries are dynamically linked to the Gtk# libraries, so no need to foll
 If interested, you should be able to use these classes in both open source and proprietary projects.
 
 
-Travis Clark
+Travis Clark, 
 Initial Developer
