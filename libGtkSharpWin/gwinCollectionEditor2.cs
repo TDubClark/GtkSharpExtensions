@@ -96,6 +96,7 @@ namespace GtkSharp.Win
 			if (args.ResponseId == ResponseType.Accept) {
 				this.Controller.Save ();
 			}
+			this.Destroy ();
 		}
 
 		void BtnAdd_Clicked (object sender, EventArgs e)

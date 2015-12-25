@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GtkSharpExtensions.Automotive
 {
@@ -20,6 +21,13 @@ namespace GtkSharpExtensions.Automotive
 
 	public class AutomobileCollection : System.Collections.ObjectModel.Collection<Automobile>
 	{
+		public void AddRange (IEnumerable<Automobile> items)
+		{
+			foreach (var item in items) {
+				Add (item);
+			}
+		}
+
 
 	}
 }

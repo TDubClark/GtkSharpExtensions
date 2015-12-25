@@ -196,6 +196,26 @@ namespace GtkSharp.Extensions
 			ColumnComboDef.Add (propertyName, new TreeComboCellDefinition (selectionItems, selectionItemComparer, allowCustom));
 		}
 
+		public void AddColumnDef<TRef> (string propertyName, string columnHeader
+			, Func<TRef, string> displayer
+			, System.Collections.IEnumerable selectionItems
+			, System.Collections.IEqualityComparer selectionItemComparer
+			, bool allowCustom) where TRef : class, new()
+		{
+			AddColumnDef<TRef> (propertyName, columnHeader, displayer, x => new TRef (), selectionItems, selectionItemComparer, allowCustom);
+		}
+
+		public void AddColumnDef<TRef> (string propertyName, string columnHeader
+			, Func<TRef, string> displayer, Func<string, TRef> parser
+			, System.Collections.IEnumerable selectionItems
+			, System.Collections.IEqualityComparer selectionItemComparer
+			, bool allowCustom) where TRef : class
+		{
+			AddColumnDef (propertyName, columnHeader, x => displayer (x as TRef), x => parser (x));
+
+			ColumnComboDef.Add (propertyName, new TreeComboCellDefinition (selectionItems, selectionItemComparer, allowCustom));
+		}
+
 		/// <summary>
 		/// Gets or sets the TreeView widget.
 		/// </summary>
@@ -660,7 +680,9 @@ namespace GtkSharp.Extensions
 		/// <param name="iter">Iter.</param>
 		void SpinCellFunction (TreeViewColumn tree_column, CellRenderer cell, TreeModel tree_model, TreeIter iter)
 		{
-			CellDataFunction (cell, tree_model, iter, 0, (CellRenderer oCell, object value) => ((CellRendererSpin)oCell).Adjustment.Value = (int)value);
+			// A Spin Cell functions as a text cell on display
+			TextCellFunction (tree_column, cell, tree_model, iter);
+			//CellDataFunction (cell, tree_model, iter, 0, (CellRenderer oCell, object value) => ((CellRendererSpin)oCell).Adjustment.Value = (int)value);
 		}
 
 		/// <summary>

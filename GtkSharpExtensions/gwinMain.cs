@@ -4,16 +4,14 @@ using GtkSharp.Extensions;
 
 namespace GtkSharpExtensions
 {
+	using GtkSharpExtensions.Automotive;
+
 	/// <summary>
 	/// Main Gtk# Window
 	/// </summary>
 	public class gwinMain : Window
 	{
-		Automotive.AutomobileCollection _cars;
-
-		Automotive.AutoModelCollection _models;
-
-		Automotive.ManufacturerCollection _makes;
+		DataBlock _data;
 
 		public gwinMain ()
 			: base (WindowType.Toplevel)
@@ -22,16 +20,13 @@ namespace GtkSharpExtensions
 
 			Build ();
 
-			_makes = new GtkSharpExtensions.Automotive.ManufacturerCollection ();
-			_models = new GtkSharpExtensions.Automotive.AutoModelCollection ();
-			_cars = new GtkSharpExtensions.Automotive.AutomobileCollection ();
+			// Create demonstration data
+			_data = new DataBlock ();
+			_data.FillWithData ();
 		}
 
 		void Build ()
 		{
-			this.WindowPosition = WindowPosition.Center;
-			this.SetSizeRequest (500, 400);
-
 			var menu = new MenuBar ();
 
 			var mnuTest = new Menu ();
@@ -48,10 +43,12 @@ namespace GtkSharpExtensions
 
 			this.Add (vbx);
 
+			this.WindowPosition = WindowPosition.Center;
+			this.SetSizeRequest (500, 400);
+			this.Destroyed += GwinMain_Destroyed;
+
 			if (this.Child != null)
 				this.Child.ShowAll ();
-
-			this.Destroyed += GwinMain_Destroyed;
 		}
 
 		void GwinMain_Destroyed (object sender, EventArgs e)
@@ -61,27 +58,61 @@ namespace GtkSharpExtensions
 
 		void EditMake_Activated (object sender, EventArgs e)
 		{
-			var controller = new TreeControllerCollectionEditor<Automotive.Manufacturer> (new StringEqualityComparer (), _makes);
+			try {
+				var controller = new TreeControllerCollectionEditor<Manufacturer> (new StringEqualityComparer (), _data.Makes);
+				
+				controller.EditablePropertyNames.AddRange (new [] { "CompanyName", "CompanyInitials" });
+				
+				ShowCollectionEditor ("Edit Auto Manufacturers", controller, true);
+			} catch (Exception ex) {
+				GtkSharp.Win.DialogFactory.ShowError (this, ex);
+			}
+		}
 
-			controller.EditablePropertyNames.AddRange (new []{ "CompanyName", "CompanyInitials" });
+		void EditModel_Activated (object sender, EventArgs e)
+		{
+			try {
+				var controller = new TreeControllerCollectionEditor<AutoModel> (new StringEqualityComparer (), _data.Models);
 
-			var view = new GtkSharp.Win.gwinCollectionEditor2 ("Edit Auto Manufacturers", this, controller, true);
+				controller.EditablePropertyNames.AddRange (new [] { "ModelName", "ModelType", "ModelSubtype", "Make" });
+				controller.AddColumnDef<Manufacturer> ("Make", "Make", x => x.CompanyName, _data.Makes, _data.Makes.Comparer, false);
+
+				ShowCollectionEditor ("Edit Auto Models", controller, true);
+			} catch (Exception ex) {
+				GtkSharp.Win.DialogFactory.ShowError (this, ex);
+			}
+		}
+
+		void EditCars_Activated (object sender, EventArgs e)
+		{
+			try {
+				var controller = new TreeControllerCollectionEditor<Automobile> (new StringEqualityComparer (), _data.Cars);
+
+				controller.EditablePropertyNames.AddRange (new [] { "Make", "Model", "Year" });
+				controller.AddColumnDef<Manufacturer> ("Make", "Make", x => x.CompanyName, _data.Makes, _data.Makes.Comparer, false);
+				controller.AddColumnDef<AutoModel> ("Model", "Model", x => x.ModelName, _data.Models, _data.Models.Comparer, false);
+
+				ShowCollectionEditor ("Edit Auto Models", controller, true);
+			} catch (Exception ex) {
+				GtkSharp.Win.DialogFactory.ShowError (this, ex);
+			}
+		}
+
+		/// <summary>
+		/// Shows the collection editor, using the given controller.
+		/// </summary>
+		/// <param name="title">The Window Title.</param>
+		/// <param name="controller">The View Controller.</param>
+		/// <param name="allowInsertDelete">If set to <c>true</c>, then allows insert delete.</param>
+		void ShowCollectionEditor (string title, ITreeControllerCollectionEditor controller, bool allowInsertDelete)
+		{
+			var view = new GtkSharp.Win.gwinCollectionEditor2 (title, this, controller, allowInsertDelete);
 
 			view.LoadTreeView ();
 
 			view.ShowAll ();
 			view.RunDialog ();
 			view.Dispose ();
-		}
-
-		void EditModel_Activated (object sender, EventArgs e)
-		{
-			throw new NotImplementedException ();
-		}
-
-		void EditCars_Activated (object sender, EventArgs e)
-		{
-			throw new NotImplementedException ();
 		}
 	}
 }
