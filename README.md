@@ -11,7 +11,7 @@ Most challenging to me was learning widget packing and the TreeView widget (I'm 
 
 I wanted to make this easier for other newcomers: faster to get started, and plenty of examples to learn from.
 
-To achieve these purposes, I tried to mask some of the complexity for common tasks (which you can learn later), and also provide some useful building blocks (hence, the collection editor).
+To achieve these purposes, I tried to mask some of the complexity for common tasks (which you can learn later), and also provide some useful building blocks (ex: a collection editor).
 
 
 My background is in enterprise-level data management applications, so the tools tend toward text-based menus, buttons, and data viewing/editing.
