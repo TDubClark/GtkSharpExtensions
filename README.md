@@ -26,12 +26,14 @@ Features
 ========
 
 Extension Methods:
+
 1. Provide more compact syntax for many common Gtk# widgets, such as Menus, ComboBoxes, and TreeViews
 2. Are designed to significantly reduce key strokes for common tasks when building UIs with C#
 3. Should feel somewhat more familiar to C# programmers
 4. Mask some of the complexity for those learning Gtk# (you can look at the code to see how it works).
 
 Existing classes:
+
 1. An editor for a collection of objects using a Gtk# TreeView
     TreeControllerCollectionEditor.cs in libGtkSharpTreeView - this is the controller in the Model-View-Controller pattern
     gwinCollectionEditor2.cs in libGtkSharpWin - this is the view in the Model-View-Controller pattern
