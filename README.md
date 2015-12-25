@@ -35,9 +35,9 @@ Extension Methods:
 Existing classes:
 
 1. An editor for a collection of objects using a Gtk# TreeView
-    TreeControllerCollectionEditor.cs in libGtkSharpTreeView - this is the controller in the Model-View-Controller pattern
-    gwinCollectionEditor2.cs in libGtkSharpWin - this is the view in the Model-View-Controller pattern
-    [The model is your collection]
+   * TreeControllerCollectionEditor.cs in libGtkSharpTreeView - this is the controller in the Model-View-Controller pattern
+   * gwinCollectionEditor2.cs in libGtkSharpWin - this is the view in the Model-View-Controller pattern
+   * [The model is your collection]
 2. A Dialog factory (DialogFactory.cs in libGtkSharpExtensions)
 
 
