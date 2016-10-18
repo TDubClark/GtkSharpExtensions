@@ -34,21 +34,22 @@ Extension Methods:
 4. Mask some of the complexity for those learning Gtk# (you can look at the code to see how it works).
 
 Existing classes:
+(see class library project libGtkSharpExtensions)
 
 1. An editor for a collection of objects using a Gtk# TreeView
-   * TreeControllerCollectionEditor.cs in libGtkSharpTreeView - this is the controller in the Model-View-Controller pattern
-   * gwinCollectionEditor2.cs in libGtkSharpWin - this is the view in the Model-View-Controller pattern
+   * TreeControllerCollectionEditor.cs - this is the controller in the Model-View-Controller pattern
+   * gwinCollectionEditor2.cs - this is the view in the Model-View-Controller pattern
    * [The model is your collection]
-2. A Dialog factory (DialogFactory.cs in libGtkSharpExtensions)
+2. A Dialog factory (DialogFactory.cs)
 
 
 How to Use
 ==========
 
 1. Download the source.
-2. Attach the projects libGtkSharpExtensions and libGtkSharpTreeView to your solution.
-3. Add references to these projects from your Gtk# project.
-4. Add the namespace: using GtkSharp.Extensions
+2. Attach the project libGtkSharpExtensions to your solution.
+3. Add references to this project from your Gtk# project.
+4. Add the namespaces: using GtkSharp.Extensions, using GtkSharp.Win
 
 
 Examples
