@@ -53,15 +53,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WidgetExtensions.cs" />
-    <Compile Include="DialogDisposable.cs" />
-    <Compile Include="ComboBoxExtensions.cs" />
-    <Compile Include="MenuExtensions.cs" />
-    <Compile Include="ToolbarExtensions.cs" />
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="ContainerExtensions.cs" />
-    <Compile Include="DialogExtensions.cs" />
-    <Compile Include="DialogFactory.cs" />
+    <Compile Include="GtkWidgetExtensions\ComboBoxExtensions.cs" />
+    <Compile Include="GtkWidgetExtensions\ContainerExtensions.cs" />
+    <Compile Include="GtkWidgetExtensions\DialogExtensions.cs" />
+    <Compile Include="GtkWidgetExtensions\MenuExtensions.cs" />
+    <Compile Include="GtkWidgetExtensions\ToolbarExtensions.cs" />
+    <Compile Include="GtkWidgetExtensions\WidgetExtensions.cs" />
+    <Compile Include="TreeViewController\CellRendererCombo2.cs" />
+    <Compile Include="TreeViewController\DataSetTreeModel.cs" />
+    <Compile Include="TreeViewController\FieldInclusion.cs" />
+    <Compile Include="TreeViewController\IObjectCreator.cs" />
+    <Compile Include="TreeViewController\ObjectExtensions.cs" />
+    <Compile Include="TreeViewController\TreeControllerCollection.cs" />
+    <Compile Include="TreeViewController\TreeControllerCollectionEditor.cs" />
+    <Compile Include="TreeViewController\TreeControllerTableEditor.cs" />
+    <Compile Include="TreeViewController\TreeModelChildEnumerator.cs" />
+    <Compile Include="TreeViewController\TreeModelExtensions.cs" />
+    <Compile Include="TreeViewController\TreeModelItemEnumerator.cs" />
+    <Compile Include="TreeViewController\TreeViewSelectedRowEnumerator.cs" />
+    <Compile Include="TreeViewController\TreeViewExtensions.cs" />
+    <Compile Include="GtkWindows\gwinCollectionEditor.cs" />
+    <Compile Include="GtkWindows\gwinCollectionEditor2.cs" />
+    <Compile Include="GtkWindows\DialogDisposable.cs" />
+    <Compile Include="GtkWindows\DialogFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -71,5 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="_About.txt" />
+    <None Include="TreeViewController\_About.txt" />
+    <None Include="GtkWindows\_About.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GtkWidgetExtensions\" />
+    <Folder Include="TreeViewController\" />
+    <Folder Include="GtkWindows\" />
   </ItemGroup>
 </Project>

@@ -67,8 +67,6 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="gwinCollectionEditor.cs" />
-    <Compile Include="gwinCollectionEditor2.cs" />
     <Compile Include="DialogFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -77,12 +75,5 @@
       <Project>{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}</Project>
       <Name>libGtkSharpExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\libGtkSharpTreeView\libGtkSharpTreeView.csproj">
-      <Project>{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}</Project>
-      <Name>libGtkSharpTreeView</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="_About.txt" />
   </ItemGroup>
 </Project>

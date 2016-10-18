@@ -81,14 +81,6 @@
       <Project>{401A4A6B-DEA9-4AAA-BFAA-F1FCE16CAFA8}</Project>
       <Name>libGtkSharpExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\libGtkSharpTreeView\libGtkSharpTreeView.csproj">
-      <Project>{9E2EEA7D-9F17-4D67-8B99-BFCC934CED01}</Project>
-      <Name>libGtkSharpTreeView</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\libGtkSharpWin\libGtkSharpWin.csproj">
-      <Project>{0A67860D-9FE5-4DA9-8A2F-E5086628E3BA}</Project>
-      <Name>libGtkSharpWin</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Automotive\" />
