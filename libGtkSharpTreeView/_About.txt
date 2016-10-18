@@ -1,7 +1,0 @@
-﻿This is a library of extension methods for TreeView-related classes
-in the Gtk# library.
-
-You can reference these methods in your project by adding this C# using statement:
-
-using GtkSharp.Extensions;
-
